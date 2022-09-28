@@ -3,7 +3,7 @@ import "./featured.css";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
-    `${process.env.REACT.APP.API.SERVER}hotels/countByCity?cities=penang,singapore,berlin`
+    `${process.env.REACT_APP_API_SERVER}hotels/countByCity?cities=penang,singapore,berlin`
   );
 
   return (
