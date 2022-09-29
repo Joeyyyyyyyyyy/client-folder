@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 // import "./login.css";'
-import Swal from "sweetalert2"
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [credentials, setCredentials] = useState({
@@ -22,7 +22,7 @@ const Register = () => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    await fetch(`${process.env.REACT.APP.API.SERVER}auth/register`, {
+    await fetch(`${process.env.REACT_APP_API_SERVER}auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,14 +41,14 @@ const Register = () => {
         }
         if (!data.status) {
           Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Your work has been saved',
+            position: "center",
+            icon: "success",
+            title: "Your work has been saved",
             showConfirmButton: false,
-            timer: 1500
-          })
+            timer: 1500,
+          });
         }
-        navigate("/login")
+        navigate("/login");
       });
   };
 

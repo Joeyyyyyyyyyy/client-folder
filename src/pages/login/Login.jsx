@@ -23,7 +23,7 @@ const Login = () => {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(
-        `${process.env.REACT.APP.API.SERVER}auth/login`,
+        `${process.env.REACT.REACT_APP_API_SERVER}auth/login`,
         credentials
       );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
